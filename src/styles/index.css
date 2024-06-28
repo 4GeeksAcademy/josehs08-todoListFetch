@@ -1,12 +1,52 @@
+body{
+    background-color: #282A36;
+    color: white;
+    font-family: "Roboto Mono", monospace;
+}
 
-/* 
+input{
+    width: 100%;
+    background-color: #282A36;
+    border: 0;
+    color: white;
+}
 
-    You can write your own styles here...
+ul{
+    padding:0;
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+    li{
+        position: relative;
+        border-top: 1px #282A36 solid;
+        list-style-type: none;
+        text-align: start;
+        
+        button{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: transparent;
+            text-align: end;
+            border: none;
+            color: transparent;
+            padding-right: 5%;
+        }
 
-*/
+        button:hover{
+            color: red;
+        }
+    }
+}
+
+p{
+    border-top: 1px solid #282A36;
+}
+
+.contenedor{
+
+    background-color: #44475A;
+    border: 1px #F8F8F2 solid;
+    width: 50%;
+}
+

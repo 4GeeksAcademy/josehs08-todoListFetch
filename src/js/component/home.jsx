@@ -14,6 +14,7 @@ const Home = () => {
 	function handleKeyPress(e) {
 		if (e.key === 'Enter' && !taskList.includes(task)) {
 			addTask();
+			setTask("");
 		}
 	}
 
@@ -23,23 +24,37 @@ const Home = () => {
 	}
 
 	return (
-		<div className="text-center">
-			<input onKeyDown={handleKeyPress} onChange={(e) => { setTask(e.target.value) }} type="text" value={task} />
-			<h1>{task}</h1>
+		<div className="container-fluid d-flex justify-content-center">
 
-			<ul>{
-				taskList.map((tarea, index) =>
-					<>
-						<li
-							id={index}>
-							{tarea}
-							<button
-								onClick={() => handleDelete(index)}>
-								Delete
-							</button>
-						</li>
-					</>)
-			}</ul>
+			<div className="contenedor text-center m-5">
+
+				<h1 className="p-3">ToDo</h1>
+
+				<input
+					className="p-3"
+					onKeyDown={handleKeyPress}
+					onChange={(e) => { setTask(e.target.value) }}
+					type="text"
+					value={task}
+					placeholder="Introduzca su tarea"
+				/>
+
+				<ul className="mt-3 mb-0">{
+					taskList.map((tarea, index) =>
+						<>
+							<li
+								className="col-12 px-5 py-3 d-flex justify-content-between"
+								id={index}>
+								{tarea}
+								<button
+									onClick={() => handleDelete(index)}>
+									X
+								</button>
+							</li>
+						</>)
+				}</ul>
+				<p className="text-start p-3 m-0">{taskList.length > 0 ? (taskList.length > 1 ? taskList.length + " tareas restantes" : taskList.length + " tarea restante") : "No hay tareas"}</p>
+			</div>
 		</div>
 	);
 };
