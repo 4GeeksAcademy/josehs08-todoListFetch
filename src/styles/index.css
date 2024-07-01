@@ -11,34 +11,31 @@ input{
     color: white;
 }
 
-ul{
-    padding:0;
-    
-    li{
-        position: relative;
-        border-top: 1px #282A36 solid;
-        list-style-type: none;
-        text-align: start;
-        
-        button{
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            background-color: transparent;
-            text-align: end;
-            border: none;
-            color: transparent;
-            padding-right: 5%;
-        }
-
-        button:hover{
-            color: red;
-        }
-    }
+.taskList{
+    position: relative;
+    border-top: 1px #282A36 solid;
+    list-style-type: none;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
+.deleteTask{
+    position: absolute;
+    inset: 0;
+    text-align: end;
+    border: none;
+    background-color: transparent;
+    color: transparent;
+    padding-right: 5%;
+}
+
+.deleteTask:hover{
+    color: red;
+}
+
+.taskLabel{
+    border: 0;
+}
 p{
     border-top: 1px solid #282A36;
 }
@@ -49,4 +46,3 @@ p{
     border: 1px #F8F8F2 solid;
     width: 50%;
 }
-
